@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>solicitud de datos</title>
+    </head>
+  <body>
+
+  <form action='/create/' method='post'>
+    {% csrf_token %}
+    {{ myForm.as_p }}
+    <button type='submit'>Eviar</button>
+  </form>
+
+</body>
+</html>

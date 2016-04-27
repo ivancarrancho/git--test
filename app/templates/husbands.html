@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{%for husband in husbands%}
+		<h1>Nombre: {{husband.name}}</h1>
+		<h1>edad : {{husband.age}}</h1>
+		<h1>esposa : {{husband.wife.name}}</h1>
+		<h1>Hijos</h1>
+		{%for child in husband.wife.children.all %}
+			<h2>{{ child.name }}</h2>
+			<h2>{{ child.age }}</h2>
+		{% empty %}
+			<p>son ester</p>
+		{%endfor%} 
+		<hr/>
+	{%endfor%}	
+</body>
+</html>

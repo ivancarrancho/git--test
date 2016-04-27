@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wifes</title>
+</head>
+<body>
+	{%for wife in wifes%}
+		<h1>Nombre: {{wife.name}}</h1>
+		<h1>edad : {{wife.age}}</h1>
+		<h1>Esposo: {{wife.husband.name}}</h1>
+		<hr/>
+
+	{%endfor%}	
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<pre class="pony"><!--            .,,.
+         ,;;*;;;;,
+        .-'``;-');;.
+       /'  .-.  /*;;
+     .'    \d    \;;               .;;;,
+    / o      `    \;    ,__.     ,;*;;;*;,
+    \__, _.__,'   \_.-') __)--.;;;;;*;;;;,
+     `""`;;;\       /-')_) __)  `\' ';;;;;;
+        ;*;;;        -') `)_)  |\ |  ;;;;*;
+        ;;;;|        `---`    O | | ;;*;;;
+        *;*;\|                 O  / ;;;;;*
+       ;;;;;/|    .-------\      / ;*;;;;;
+      ;;;*;/ \    |        '.   (`. ;;;*;;;
+      ;;;;;'. ;   |          )   \ | ;;;;;;
+      ,;*;;;;\/   |.        /   /` | ';;;*;
+       ;;;;;;/    |/       /   /__/   ';;;
+       '*jgs/     |       /    |      ;*;
+            `""""`        `""""`     ;' --></pre>
+<head>
+  {% load staticfiles %}
+  <title>Accounts<title>
+</head>
+<body>
+<a href="/create">Crear nuevo gasto</a>
+  {% csrf_token %}
+  {%for x in data_list%}
+  <div class="expense">
+    <ul>
+        <li>{{x.pk}}</li>
+            <li class="total_expeses">valor boleta: {{x.expenses}}</li>
+    </ul>
+  No de boletas
+    <select data-total="{{x.expenses}}" data-pk="{{x.pk}}" class="range_sum">
+        {% for range in range_list%}
+            <option value="{{ range }}" class="option_sum">{{ range }}</option>
+        {% endfor %}
+</select>
+<p class="total_value">{{x.expenses}}</p>
+  <a href="/detail/{{x.pk}}" title = 'kjhgfd'> ver detalle</a>
+  {%endfor%}
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+</body>
+</html>
